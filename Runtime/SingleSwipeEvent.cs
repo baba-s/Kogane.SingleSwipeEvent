@@ -16,6 +16,15 @@ namespace Kogane
         public Action OnDown  { get; set; }
         public Action OnUp    { get; set; }
 
+        private void OnDestroy()
+        {
+            OnLeft  = null;
+            OnRight = null;
+            OnDown  = null;
+            OnUp    = null;
+        }
+
+
         private void OnEnable()
         {
             m_singleTouchEvent.OnStarted += OnStarted;
